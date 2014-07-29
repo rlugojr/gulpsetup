@@ -27,15 +27,15 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function() {
 	gulp.src('scss/mywebsite.scss')
-		.pipe(sass(
-		  {sourcemap: true, sourcemapPath: './scss', loadPath: './scss/**/*', style: 'compressed'}
-		))
-		.on('error', function (err) { console.log(err.message); })
-		.pipe(gulp.dest('css/'))
-		.pipe(prefix("last 4 version"))
-		.pipe(header(banner, { package : package }))
-		.pipe(gulp.dest('css/'))
-		.pipe(reload({stream:true, once: true}))
+	.pipe(sass(
+	  {sourcemap: true, sourcemapPath: './scss', loadPath: './scss/**/*', style: 'compressed'}
+	))
+	.on('error', function (err) { console.log(err.message); })
+	.pipe(gulp.dest('css/'))
+	.pipe(prefix("last 4 version"))
+	.pipe(header(banner, { package : package }))
+	.pipe(gulp.dest('css/'))
+	.pipe(reload({stream:true, once: true}))
 });
 
 gulp.task('browser-sync', function() {
@@ -72,22 +72,22 @@ gulp.task('jshint', function() {
 
 gulp.task('imagemin', function () {
 	return gulp.src('images/*')
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngcrush()]
-		}))
-		.pipe(gulp.dest('images/'));
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngcrush()]
+	}))
+	.pipe(gulp.dest('images/'));
 });
 
 gulp.task('csslint', function(){
   gulp.src('./css/mywebsite.css')
 	.pipe(csslint({
-		  'compatible-vendor-prefixes': false,
-		  'box-sizing': false,
-		  'important': false,
-		  'known-properties': false
-		}))
+	  'compatible-vendor-prefixes': false,
+	  'box-sizing': false,
+	  'important': false,
+	  'known-properties': false
+	}))
 	.pipe(csslint.reporter());
 });
 
