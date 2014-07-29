@@ -1,0 +1,18 @@
+/*!
+ * my-website
+ * a simple website put together by the lovely Gulp
+ * http://labs.urre.me
+ * @author Urban Sanden
+ * @version 0.1.0
+ * Copyright 2014. MIT licensed.
+ */
+{
+  "version": 3,
+  "mappings": "AACC,yBAAG,CACF,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,4BAAG,CACF,OAAO,CAAE,YAAY,CACrB,YAAY,CAAE,GAAG,CACjB,uCAAa,CACZ,YAAY,CAAE,CAAC,CAEhB,8BAAE,CACD,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,IAAmB,CAC1B,UAAU,CAAE,OAAmB,CAC/B,OAAO,CAAE,OAAO,CAChB,oCAAQ,CACP,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,OAAmB,CCfpC,IAAK,CACJ,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,uBAAuB,CACpC,WAAW,CAAE,GAAG,CAChB,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CAGb,EAAG,CACF,SAAS,CAAE,IAAI",
+  "sources": [
+    "scss/Applications/MAMP/htdocs/labs/gulpsetup/scss/partials/_navigation.scss",
+    "scss/mywebsite.scss"
+  ],
+  "names": [],
+  "file": "mywebsite.css"
+}

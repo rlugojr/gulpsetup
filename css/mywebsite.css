@@ -1,0 +1,9 @@
+/*!
+ * my-website
+ * a simple website put together by the lovely Gulp
+ * http://labs.urre.me
+ * @author Urban Sanden
+ * @version 0.1.0
+ * Copyright 2014. MIT licensed.
+ */
+nav[role="navigation"] ul{list-style:none;padding:0;margin:0}nav[role="navigation"] ul li{display:inline-block;margin-right:1em}nav[role="navigation"] ul li:last-child{margin-right:0}nav[role="navigation"] ul li a{text-decoration:none;color:#666;background:#f2f2f2;padding:1em 3em}nav[role="navigation"] ul li a:hover{color:green;background:#ededed}body{font-size:100%;font-family:'helvetica', sans-serif;font-weight:100;text-align:center;padding:4em}h1{font-size:6rem}
