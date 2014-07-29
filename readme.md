@@ -4,7 +4,7 @@ This is my [Gulp](http://gulpjs.com) setup i've been using lately. The folder st
 
 ## Tools
 
-+ Sass (using Ruby Sass (Native/Lib Sass is faster, but this has more features as i write this))
++ Sass (using ruby-sass (gulp-sass (libsass) is faster, but this has more features (for Sass 3.3) as i write this))
 + Sass 3.3 Source maps
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
