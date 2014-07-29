@@ -12,6 +12,7 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 + [Autoprefixer](https://github.com/ai/autoprefixer)
 + Banner using [header](https://www.npmjs.org/package/gulp-header) with metadata from package.json
 + Uglify
++ Imagemin
 + Jshint
 + Csshint
 
