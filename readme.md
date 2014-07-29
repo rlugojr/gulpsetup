@@ -1,6 +1,8 @@
 # Gulp setup
 
-This is my [Gulp](http://gulpjs.com) setup i've been using lately. The folder structure is the one i use for WordPress theme development, but easy to change. Browsersync reloads on all file changes, and uses proxy with vhost.
+This is my [Gulp](http://gulpjs.com) setup i've been using lately. The folder structure is the one i use for WordPress theme development (hence .php files), but easy to change.
+
+Browsersync reloads on all file changes, and uses proxy with vhost.
 
 ## Tools
 
