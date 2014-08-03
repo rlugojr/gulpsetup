@@ -1,0 +1,26 @@
+
+@import "partials/helpers";
+@import "partials/buttons";
+@import "partials/footer";
+
+* {
+  &,
+  &:before,
+  &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+body {
+	font-size: 100%;
+	font-family: 'helvetica', sans-serif;
+	font-weight: 100;
+	text-align: center;
+	padding: 4em;
+}
+
+h1 {
+	font-size: 6rem;
+}

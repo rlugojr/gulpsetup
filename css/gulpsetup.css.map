@@ -1,0 +1,20 @@
+/*!
+ * my-website
+ * a simple website put together by the lovely Gulp
+ * http://labs.urre.me
+ * @author Urban Sanden
+ * @version 0.1.0
+ * Copyright 2014. MIT licensed.
+ */
+{
+  "version": 3,
+  "mappings": "AAAA,GAAI,CACH,SAAS,CAAE,IAAI,CACf,MAAM,CAAK,IAAI,CACf,MAAM,CAAI,IAAI,CACd,KAAK,CAAK,MAAM,CAGjB,GAAI,CACH,MAAM,CAAE,IAAI,CACZ,sBAAsB,CAAE,OAAO,CAGhC,cAAe,CACd,QAAQ,CAAE,MAAM,CAGjB,MAAO,CACN,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CAGb,MAAO,CACN,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CAIb,GAAI,CACH,IAAI,CAAC,CAAC,CACN,oBAAkB,CACjB,OAAO,CAAE,OAAO,CAChB,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,MAAM,CAEjB,SAAQ,CACP,KAAK,CAAE,IAAI,CCpCb,QAAS,CACR,MAAM,CAAE,WAAW,CCDpB,0BAA2B,CAC1B,UAAU,CAAE,GAAG,CCKd,kBAEQ,CACN,kBAAkB,CAAE,UAAU,CAC9B,eAAe,CAAE,UAAU,CAC3B,UAAU,CAAE,UAAU,CAI1B,IAAK,CACJ,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,uBAAuB,CACpC,WAAW,CAAE,GAAG,CAChB,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CAGb,EAAG,CACF,SAAS,CAAE,IAAI",
+  "sources": [
+    "scss/Applications/MAMP/htdocs/labs/gulpsetup/scss/partials/_helpers.scss",
+    "scss/Applications/MAMP/htdocs/labs/gulpsetup/scss/partials/_buttons.scss",
+    "scss/Applications/MAMP/htdocs/labs/gulpsetup/scss/partials/_footer.scss",
+    "scss/gulpsetup.scss"
+  ],
+  "names": [],
+  "file": "gulpsetup.css"
+}
