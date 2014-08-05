@@ -16,6 +16,7 @@
     "gulp-jshint": "~1.8.1",
     "gulp-concat": "~2.3.4",
     "gulp-csslint": "~0.1.4",
-    "gulp-rev-all": "~0.6.2"
+    "gulp-rev-all": "~0.6.2",
+    "gulp-rev-append": "~0.1.3"
   }
 }

@@ -15,7 +15,7 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 + Imagemin
 + Jshint
 + Csshint
-+ Rev-all for cache busting
++ [Rev-append](https://github.com/bustardcelly/gulp-rev-append) for cache busting
 
 ## Getting started
 
@@ -26,5 +26,6 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 	gulp
 
 ### Changelog
++ 2014-08-25: Changed `rev-all` to `rev-append` cache-busting files using file hash
 + 2014-08-03: Added `rev-all` for cdn versioning/cache busting and nicer path handling
 + 2014-07-29: First version

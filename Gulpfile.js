@@ -10,6 +10,7 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 	revall = require('gulp-rev-all'),
+	rev = require('gulp-rev-append'),
 	package = require('./package.json');
 
 var paths = {
@@ -47,13 +48,14 @@ gulp.task('sass', function() {
 			sourcemap: true,
 			sourcemapPath: paths.src.sass,
 			loadPath: paths.src.sass,
-			style: 'compressed'
+			style: 'compressed',
+			lineNumbers: false
 		}))
 		.on('error', function(err) {
 			console.log(err.message);
 		})
 		.pipe(gulp.dest(paths.dist.css))
-		.pipe(prefix("last 4 version"))
+		.pipe(prefix("last 2 versions", 'Android'))
 		.pipe(header(banner, {
 			package: package
 		}))
@@ -83,7 +85,7 @@ gulp.task('js', function() {
 		.pipe(jshint('.jshintrc'))
 		.pipe(jshint.reporter('default'))
 		.pipe(concat('gulpsetup.min.js'))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(header(banner, {
 			package: package
 		}))
