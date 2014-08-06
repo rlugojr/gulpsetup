@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 	clean = require('gulp-clean'),
 	package = require('./package.json');
 
+// Project paths
 var paths = {
 	src: {
 		sass: './scss/',
@@ -46,7 +47,7 @@ var banner = [
 gulp.task('sass', function() {
 	gulp.src(paths.src.sass + 'gulpsetup.scss', paths.src.sassall + '*.scss')
 		.pipe(sass({
-			sourcemap: true,
+			sourcemap: false,
 			sourcemapPath: paths.src.sass,
 			loadPath: paths.src.sass,
 			style: 'compressed',
@@ -60,6 +61,8 @@ gulp.task('sass', function() {
 			package: package
 		}))
 		.pipe(gulp.dest(paths.dist.css))
+		.pipe(csslint())
+		.pipe(csslint.reporter())
 		.pipe(reload({
 			stream: true,
 		}))
@@ -70,6 +73,8 @@ gulp.task('js', function() {
 	gulp.src([
 		paths.src.js + 'gulpsetup.js',
 	])
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter('default'))
 		.pipe(concat('gulpsetup.min.js'))
 		.pipe(uglify())
 		.pipe(header(banner, {
