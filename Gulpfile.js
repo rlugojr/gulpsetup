@@ -9,8 +9,7 @@ var gulp = require('gulp'),
 	csslint = require('gulp-csslint'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
-	revall = require('gulp-rev-all'),
-	rev = require('gulp-rev-append'),
+	clean = require('gulp-clean'),
 	package = require('./package.json');
 
 var paths = {
@@ -18,30 +17,32 @@ var paths = {
 		sass: './scss/',
 		sassall: './scss/**/',
 		css: './css/',
-		js: './js/views/',
+		js: './js/views/**/',
 		images: './images/',
 		html: './',
 	},
 	dist: {
-		css: './css/',
-		js: './js/min/',
+		css: './dist/',
+		js: './dist/',
 		images: './images/',
 		html: './'
 	}
 };
 
+// Banner using meta data from package.json
 var banner = [
 	'/*!\n' +
-	' * <%= package.name %>\n' +
-	' * <%= package.title %>\n' +
-	' * <%= package.url %>\n' +
-	' * @author <%= package.author %>\n' +
-	' * @version <%= package.version %>\n' +
-	' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
+	' *	 <%= package.name %>.' +
+	' <%= package.title %>.' +
+	' <%= package.url %>.' +
+	' @author <%= package.author %>.' +
+	' @version <%= package.version %>.' +
+	' Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
 	' */',
 	'\n'
 ].join('');
 
+// Compile Sass
 gulp.task('sass', function() {
 	gulp.src(paths.src.sass + 'gulpsetup.scss', paths.src.sassall + '*.scss')
 		.pipe(sass({
@@ -54,52 +55,57 @@ gulp.task('sass', function() {
 		.on('error', function(err) {
 			console.log(err.message);
 		})
-		.pipe(gulp.dest(paths.dist.css))
-		.pipe(prefix("last 2 versions", 'Android'))
+		.pipe(prefix('last 2 versions'))
 		.pipe(header(banner, {
 			package: package
 		}))
 		.pipe(gulp.dest(paths.dist.css))
 		.pipe(reload({
 			stream: true,
-			once: true
 		}))
 });
 
-gulp.task('browser-sync', function() {
-	browserSync.init([paths.src.sass, paths.src.css, paths.src.js, paths.src.images, paths.src.html], {
-		proxy: "http://gulpsetup.loc/",
-		browser: "google chrome",
-		notify: false,
-	});
-});
-
-gulp.task('bs-reload', function() {
-	browserSync.reload();
-});
-
+// Concatinate and minify Javascript
 gulp.task('js', function() {
 	gulp.src([
-		paths.src.js+'gulpsetup.js',
+		paths.src.js + 'gulpsetup.js',
 	])
-		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('default'))
 		.pipe(concat('gulpsetup.min.js'))
 		.pipe(uglify())
 		.pipe(header(banner, {
 			package: package
 		}))
 		.pipe(gulp.dest(paths.dist.js))
+		.pipe(reload({
+			stream: true,
+		}))
 });
 
+// Browser sync
+gulp.task('browser-sync', function() {
+	browserSync.init([paths.src.sass, paths.src.css, paths.src.js, paths.src.images, paths.src.html], {
+		proxy: 'gulpsetup.loc',
+		browser: "google chrome",
+		port: 5000,
+		notify: false,
+	});
+});
+
+// Browser sync reload
+gulp.task('bs-reload', function() {
+	browserSync.reload();
+});
+
+// Jshint
 gulp.task('jshint', function() {
 	gulp.src([
-		paths.src.js+'gulpsetup.js',
+		paths.src.js + 'gulpsetup.js',
 	])
 		.pipe(jshint('.jshintrc'))
 		.pipe(jshint.reporter('default'))
 });
 
+// Minify images
 gulp.task('imagemin', function() {
 	return gulp.src(paths.src.images)
 		.pipe(imagemin({
@@ -112,8 +118,9 @@ gulp.task('imagemin', function() {
 		.pipe(gulp.dest(paths.dist.images));
 });
 
+// CSS Lint
 gulp.task('csslint', function() {
-	gulp.src(paths.src.css+'gulpsetup.css')
+	gulp.src(paths.src.css + 'gulpsetup.css')
 		.pipe(csslint({
 			'compatible-vendor-prefixes': false,
 			'box-sizing': false,
@@ -123,14 +130,31 @@ gulp.task('csslint', function() {
 		.pipe(csslint.reporter());
 });
 
-gulp.task('rev', function() {
-	gulp.src('./index.html')
-		.pipe(rev())
-		.pipe(gulp.dest('.'));
+// Clean tasks
+gulp.task('cleanall', function() {
+	return gulp.src('./dist/*', {
+			force: true
+		})
+		.pipe(clean());
 });
 
-gulp.task('default', ['sass', 'js', 'browser-sync'], function() {
-	gulp.watch([paths.src.sassall+'*.scss'], ['sass']);
-	gulp.watch([paths.src.js+'*.js'], ['js']);
-	gulp.watch(['index.html'], ['bs-reload']);
+gulp.task('cleancss', function() {
+	return gulp.src('./dist/*.css', {
+			force: true
+		})
+		.pipe(clean());
+});
+
+gulp.task('cleanjs', function() {
+	return gulp.src('./dist/*.js', {
+			force: true
+		})
+		.pipe(clean());
+});
+
+// Main task
+gulp.task('default', ['cleanall', 'sass', 'js', 'browser-sync'], function() {
+	gulp.watch([paths.src.sass + '*.scss'], ['cleancss', 'sass', 'bs-reload']);
+	gulp.watch([paths.src.js + '*.js'], ['cleanjs', 'js', 'bs-reload']);
+	gulp.watch(['./index.html'], ['bs-reload']);
 });
