@@ -30,7 +30,7 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 
 ### Changelog
 
-+ 2014-08-08: Using multi line banner style again. Dont ignore `/dist` folder
++ 2014-08-08: Using multi line banner style again. Dont ignore `/dist` folder. Added Bower and BASCSS
 + 2014-08-06: Removed rev tasks for now. Nicer banner style
 + 2014-08-05: Changed `rev-all` to `rev-append` cache-busting files using file hash
 + 2014-08-03: Added `rev-all` for cdn versioning/cache busting and nicer path handling
