@@ -33,12 +33,12 @@ var paths = {
 // Banner using meta data from package.json
 var banner = [
 	'/*!\n' +
-	' *	 <%= package.name %>.' +
-	' <%= package.title %>.' +
-	' <%= package.url %>.' +
-	' @author <%= package.author %>.' +
-	' @version <%= package.version %>.' +
-	' Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
+	' * <%= package.name %>\n' +
+	' * <%= package.title %>\n' +
+	' * <%= package.url %>\n' +
+	' * @author <%= package.author %>\n' +
+	' * @version <%= package.version %>\n' +
+	' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
 	' */',
 	'\n'
 ].join('');
