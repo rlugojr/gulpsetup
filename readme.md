@@ -19,6 +19,9 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 
 ## Getting started
 
+	git clone git@github.com:urre/gulpsetup.git mywebsite
+	cd mywebsite
+
 	npm install gulp
 	npm install browser-sync
 	npm install
