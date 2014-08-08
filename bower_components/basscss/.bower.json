@@ -1,0 +1,13 @@
+{
+  "name": "basscss",
+  "homepage": "https://github.com/jxnblk/basscss",
+  "_release": "8758678e15",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8758678e15d7d9704a0b82ba25e7c686fc04562a"
+  },
+  "_source": "git@github.com:jxnblk/basscss.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:jxnblk/basscss.git"
+}

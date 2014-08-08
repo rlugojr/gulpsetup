@@ -1,0 +1,18 @@
+{
+  "name": "gulpsetup",
+  "version": "0.1.0",
+  "authors": [
+    "Urban Sanden <hej@urre.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "basscss": "git@github.com:jxnblk/basscss.git"
+  }
+}
