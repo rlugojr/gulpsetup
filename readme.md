@@ -22,14 +22,18 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 	git clone git@github.com:urre/gulpsetup.git mywebsite
 	cd mywebsite
 
-	npm install gulp
-	npm install browser-sync
+	npm install browser-sync gulp --save-dev
 	npm install
 
 	gulp
 
+Watch, inject and reload using Browser Sync
+
+	gulp serve
+
 ### Changelog
 
++ 2014-08-30: Separate watch task. Typo, jshint order. Use BASCSS-lite. Updated readme on browser-sync install
 + 2014-08-08: Using multi line banner style again. Dont ignore `/dist` folder. Added Bower and BASCSS
 + 2014-08-06: Removed rev tasks for now. Nicer banner style
 + 2014-08-05: Changed `rev-all` to `rev-append` cache-busting files using file hash

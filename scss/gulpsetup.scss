@@ -1,4 +1,4 @@
-@import "bower_components/basscss/scss/basscss";
+@import "bower_components/basscss/scss/basscss-lite";
 @import "partials/helpers";
 @import "partials/buttons";
 @import "partials/footer";
@@ -20,4 +20,13 @@ body {
 	text-align: center;
 	padding: 4em;
   background: #f2f2f2;
+}
+
+code {
+  color: green;
+}
+
+a {
+  text-decoration: none;
+  color: green;
 }

@@ -71,16 +71,16 @@ gulp.task('sass', function() {
 // Concatinate and minify Javascript
 gulp.task('js', function() {
 	gulp.src([
-		paths.src.js + 'gulpsetup.js',
+		paths.src.js + 'app.js',
 	])
-		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('default'))
-		.pipe(concat('gulpsetup.min.js'))
+		.pipe(concat('gulpsetup.js'))
 		.pipe(uglify())
 		.pipe(header(banner, {
 			package: package
 		}))
 		.pipe(gulp.dest(paths.dist.js))
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter('default'))
 		.pipe(reload({
 			stream: true,
 		}))
@@ -135,6 +135,13 @@ gulp.task('csslint', function() {
 		.pipe(csslint.reporter());
 });
 
+// Revs using cache-buster using query string file hash
+gulp.task('rev', function() {
+  gulp.src('./index.html')
+    .pipe(rev())
+    .pipe(gulp.dest('./dist/'));
+});
+
 // Clean tasks
 gulp.task('cleanall', function() {
 	return gulp.src('./dist/*', {
@@ -151,14 +158,17 @@ gulp.task('cleancss', function() {
 });
 
 gulp.task('cleanjs', function() {
-	return gulp.src('./dist/*.js', {
+	return gulp.src('./dist/*', {
 			force: true
 		})
 		.pipe(clean());
 });
 
 // Main task
-gulp.task('default', ['cleanall', 'sass', 'js', 'browser-sync'], function() {
+gulp.task('default', ['cleanall', 'sass', 'js']);
+
+// Watch task with Browsersync
+gulp.task('serve', ['cleanall', 'sass', 'js', 'browser-sync', 'bs-reload'], function() {
 	gulp.watch([paths.src.sass + '*.scss'], ['cleancss', 'sass', 'bs-reload']);
 	gulp.watch([paths.src.js + '*.js'], ['cleanjs', 'js', 'bs-reload']);
 	gulp.watch(['./index.html'], ['bs-reload']);
