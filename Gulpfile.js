@@ -47,7 +47,7 @@ var banner = [
 gulp.task('sass', function() {
 	gulp.src(paths.src.sass + 'gulpsetup.scss', paths.src.sassall + '*.scss')
 		.pipe(sass({
-			sourcemap: false,
+			sourcemap: true,
 			sourcemapPath: paths.src.sass,
 			loadPath: paths.src.sass,
 			style: 'compressed',
