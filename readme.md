@@ -6,8 +6,8 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 
 ## Tools
 
-+ Sass (using `ruby-sass` (`gulp-sass` (libsass) is faster, but this has more features (for Sass 3.3) as i write this))
-+ Sass 3.3 Source maps
++ Sass (using `ruby-sass` (`gulp-sass` (libsass) is faster, but this has more features (for newer Sass features) as i write this))
++ Sass 3.3+ Source maps
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
 + Banner using [header](https://www.npmjs.org/package/gulp-header) with metadata from package.json
