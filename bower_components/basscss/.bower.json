@@ -1,11 +1,12 @@
 {
   "name": "basscss",
   "homepage": "https://github.com/jxnblk/basscss",
-  "_release": "8758678e15",
+  "version": "4.0.0",
+  "_release": "4.0.0",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "8758678e15d7d9704a0b82ba25e7c686fc04562a"
+    "type": "version",
+    "tag": "4.0.0",
+    "commit": "46b59834c71feedbd680368ec988c0c50551f008"
   },
   "_source": "git@github.com:jxnblk/basscss.git",
   "_target": "*",

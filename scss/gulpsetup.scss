@@ -1,32 +1,35 @@
-@import "bower_components/basscss/scss/basscss-lite";
+@import "bower_components/basscss/scss/base";
 @import "partials/helpers";
 @import "partials/buttons";
 @import "partials/footer";
 
+$light-grey: lighten(black, 96%);
+$green: #53862C;
+
 * {
-  &,
-  &:before,
-  &:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
+	&,
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
 }
 
 body {
-	font-size: 100%;
-	font-family: 'helvetica', sans-serif;
-	font-weight: 100;
+	font: {
+		size: 100%;
+		family: 'helvetica', sans-serif;
+		weight: 100;
+	}
 	text-align: center;
 	padding: 4em;
-  background: #f2f2f2;
+	background: $light-grey;
 }
 
 code {
-  color: green;
+  color: $green;
 }
 
 a {
   text-decoration: none;
-  color: green;
+  color: $green;
 }
