@@ -39,6 +39,11 @@ Setup `mywebsite.loc` on your local machine
 
 	gulp serve
 
+### Todo
+
++ Add [gulp-rev](https://github.com/sindresorhus/gulp-rev) for real cache buster using static asset revisioning by appending content hash to filenames
++ Add [Browserify](http://viget.com/extend/gulp-browserify-starter-faq)
+
 ### Changelog
 
 + 2014-08-30: Separate watch task. Typo, jshint order. Use BASCSS-lite. Updated readme on browser-sync install
