@@ -43,9 +43,11 @@ Setup `mywebsite.loc` on your local machine
 
 + Add [gulp-rev](https://github.com/sindresorhus/gulp-rev) for real cache buster using static asset revisioning by appending content hash to filenames
 + Add [Browserify](http://viget.com/extend/gulp-browserify-starter-faq)
++ Add [gulp-notify](https://www.npmjs.org/package/gulp-notify) and [gulp-plumber](https://www.npmjs.org/package/gulp-plumber)
 
 ### Changelog
 
++ 2014-09-21: Added a todo section in readme. Cleanup
 + 2014-08-30: Separate watch task. Typo, jshint order. Use BASCSS-lite. Updated readme on browser-sync install
 + 2014-08-08: Using multi line banner style again. Dont ignore `/dist` folder. Added Bower and BASCSS
 + 2014-08-06: Removed rev tasks for now. Nicer banner style
