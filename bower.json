@@ -2,7 +2,7 @@
   "name": "gulpsetup",
   "version": "0.1.0",
   "authors": [
-    "Urban Sanden <hej@urre.me>"
+    "Grand Public <hej@urre.me>"
   ],
   "license": "MIT",
   "ignore": [
@@ -12,7 +12,10 @@
     "test",
     "tests"
   ],
+  "dependencies": {
+    "jquery": "1.11.1"
+  },
   "devDependencies": {
-    "basscss": "git@github.com:jxnblk/basscss.git"
+    "fastclick": "~1.0.3"
   }
 }

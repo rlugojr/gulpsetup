@@ -1,175 +1,243 @@
-var gulp = require('gulp'),
-	sass = require('gulp-ruby-sass'),
-	prefix = require('gulp-autoprefixer'),
-	concat = require('gulp-concat'),
-	browserSync = require('browser-sync'),
-	header = require('gulp-header'),
-	imagemin = require('gulp-imagemin'),
-	reload = browserSync.reload,
-	csslint = require('gulp-csslint'),
-	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify'),
-	clean = require('gulp-clean'),
-	package = require('./package.json');
+/**
+ * Gulpsetup
+ * Copyright (c) 2014 Urban Sanden
+ * Using Browser Sync http://www.browsersync.io/, Autoprefixer, Sass, Uglify etc
+ * With some inspiration from https://github.com/neoskop/patternlab-php and http://code.tutsplus.com/tutorials/gulp-as-a-development-web-server--cms-20903
+ */
 
-// Project paths
-var paths = {
-	src: {
-		sass: './scss/',
-		sassall: './scss/**/',
-		css: './css/',
-		js: './js/views/**/',
-		images: './images/',
-		html: './',
-	},
-	dist: {
-		css: './dist/',
-		js: './dist/',
-		images: './images/',
-		html: './'
-	}
+
+/*-------------------------------------------------------------------
+
+    Required plugins
+
+-------------------------------------------------------------------*/
+
+var
+  gulp        = require('gulp'),
+  package     = require('./package.json'),
+  clean       = require('gulp-clean'),
+  concat      = require('gulp-concat'),
+  cssmin      = require('gulp-cssmin'),
+  filter      = require('gulp-filter'),
+  gulpif      = require('gulp-if'),
+  imagemin    = require('gulp-imagemin'),
+  header      = require('gulp-header'),
+  rename      = require('gulp-rename'),
+  sass        = require('gulp-ruby-sass'),
+  uglify      = require('gulp-uglify'),
+  browserSync = require('browser-sync'),
+  prefix      = require('gulp-autoprefixer'),
+  pngcrush    = require('imagemin-pngcrush'),
+  reload      = browserSync.reload;
+
+/*-------------------------------------------------------------------
+
+  1. Configuration
+  Base paths
+
+-------------------------------------------------------------------*/
+
+var basePaths = {
+  assets: {
+    dist: 'dist/'
+  },
+  scripts: {
+    base: 'js/views/',
+    dist: 'dist/'
+  },
+  bowerjs: {
+    base: 'bower_components/',
+  },
+  scss: {
+    base: 'scss/',
+    dist: 'dist/'
+  },
+  html: {
+    base: './',
+    dist: './'
+  },
+  images: {
+    base: 'images/',
+    dist: 'images/'
+  },
 };
 
-// Banner using meta data from package.json
+/*-------------------------------------------------------------------
+
+  2. Application paths
+
+-------------------------------------------------------------------*/
+
+var appFiles = {
+  versioning: [
+    './package.json',
+    './bower.json'
+  ],
+
+  scripts: basePaths.scripts.base + '*.js',
+  scss: basePaths.scss.base + '**/*.scss',
+  html: basePaths.html.base + '**/*.html',
+  images: basePaths.images.base + '**/*'
+
+};
+
+/*-------------------------------------------------------------------
+
+  Banner using meta data from package.json
+
+-------------------------------------------------------------------*/
+
 var banner = [
-	'/*!\n' +
-	' * <%= package.name %>\n' +
-	' * <%= package.title %>\n' +
-	' * <%= package.url %>\n' +
-	' * @author <%= package.author %>\n' +
-	' * @version <%= package.version %>\n' +
-	' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
-	' */',
-	'\n'
+  '/*!\n' +
+  ' * <%= package.name %>\n' +
+  ' * <%= package.title %>\n' +
+  ' * <%= package.url %>\n' +
+  ' * @author <%= package.author %>\n' +
+  ' * @version <%= package.version %>\n' +
+  ' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
+  ' */',
+  '\n'
 ].join('');
 
-// Compile Sass
+
+/*-------------------------------------------------------------------
+
+    Tasks
+
+-------------------------------------------------------------------*/
+
+// Clean /dist folder
+gulp.task('clean:before', function() {
+  return gulp.src(
+      basePaths.assets.dist
+    )
+    .pipe(clean({
+      force: true
+    }))
+});
+
+// Compile, concat and Uglify Javascript
+gulp.task('scripts', function() {
+  return gulp.src([
+      basePaths.bowerjs.base + 'jquery/dist/jquery.js',
+      basePaths.bowerjs.base + 'fastclick/lib/fastclick.js',
+      basePaths.bowerjs.base + 'svgeezy/svgeezy.js',
+      basePaths.bowerjs.base + 'slick.js/slick/slick.js',
+      basePaths.scripts.base + '*.js'
+    ])
+    .pipe(concat(
+      'gulpsetup.js'
+    ))
+    .pipe(reload({
+      stream: true
+    }))
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(header(banner, {
+      package: package
+    }))
+    .pipe(gulp.dest(
+      basePaths.scripts.dist
+    ))
+});
+
+// Handle images with imagemin and pngcrush
+gulp.task('images', function() {
+  return gulp.src(appFiles.images)
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
+      use: [pngcrush()]
+    }))
+    .pipe(gulp.dest(
+      basePaths.images.dist
+    ))
+  browserSync.reload();
+});
+
+// Compile Sass with Ruby-Sass, compressed format without line numbers. Console log errors.
 gulp.task('sass', function() {
-	gulp.src(paths.src.sass + 'gulpsetup.scss', paths.src.sassall + '*.scss')
-		.pipe(sass({
-			sourcemap: true,
-			sourcemapPath: paths.src.sass,
-			loadPath: paths.src.sass,
-			style: 'compressed',
-			lineNumbers: false
-		}))
-		.on('error', function(err) {
-			console.log(err.message);
-		})
-		.pipe(prefix('last 2 versions'))
-		.pipe(header(banner, {
-			package: package
-		}))
-		.pipe(gulp.dest(paths.dist.css))
-		.pipe(csslint())
-		.pipe(csslint.reporter())
-		.pipe(reload({
-			stream: true,
-		}))
+  return gulp.src(appFiles.scss)
+    .pipe(sass({
+      style: 'expanded',
+      lineNumbers: true
+    }))
+    .on('error', function(err) {
+      // console.log(err.message);
+    })
+    // .pipe(cssmin())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(prefix('>1%', 'last 4 versions',  'android', 'ios'))
+    .pipe(header(banner, {
+      package: package
+    }))
+    .pipe(gulp.dest(
+      basePaths.scss.dist
+    ))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
-// Concatinate and minify Javascript
-gulp.task('js', function() {
-	gulp.src([
-		paths.src.js + 'app.js',
-	])
-		.pipe(concat('gulpsetup.js'))
-		.pipe(uglify())
-		.pipe(header(banner, {
-			package: package
-		}))
-		.pipe(gulp.dest(paths.dist.js))
-		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('default'))
-		.pipe(reload({
-			stream: true,
-		}))
-});
-
-// Browser sync
+// Browser sync using proxy vhost, open in Google Chrome. Use port 5000. Don't output default Browser Sync notify alerts
 gulp.task('browser-sync', function() {
-	browserSync.init([paths.src.sass, paths.src.css, paths.src.js, paths.src.images, paths.src.html], {
-		proxy: 'gulpsetup.loc',
-		browser: "google chrome",
-		port: 5000,
-		notify: false,
-	});
+  browserSync({
+    proxy: 'gulpsetup.loc',
+    browser: "google chrome",
+    port: 5000,
+    notify: false,
+  });
 });
 
 // Browser sync reload
 gulp.task('bs-reload', function() {
-	browserSync.reload();
+  browserSync.reload();
 });
 
-// Jshint
-gulp.task('jshint', function() {
-	gulp.src([
-		paths.src.js + 'gulpsetup.js',
-	])
-		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('default'))
+// Task: Watch files
+gulp.task('watch', function() {
+
+  // Watch scripts
+  gulp.watch(appFiles.scripts, ['scripts', browserSync.reload]);
+
+  // Watch Sass
+  gulp.watch(appFiles.scss, ['sass']);
+
+  // Watch HTML, and reload browser
+  gulp.watch(appFiles.html, ['bs-reload']);
+
 });
 
-// Minify images
-gulp.task('imagemin', function() {
-	return gulp.src(paths.src.images)
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{
-				removeViewBox: false
-			}],
-			use: [pngcrush()]
-		}))
-		.pipe(gulp.dest(paths.dist.images));
+/*-------------------------------------------------------------------
+
+    Main tasks
+
+-------------------------------------------------------------------*/
+
+// Default. Just runs once.
+// Type 'gulp' in the terminal
+gulp.task('default', ['clean:before'], function() {
+  gulp.start(
+    'sass',
+    'images',
+    'scripts'
+  );
 });
 
-// CSS Lint
-gulp.task('csslint', function() {
-	gulp.src(paths.src.css + 'gulpsetup.css')
-		.pipe(csslint({
-			'compatible-vendor-prefixes': false,
-			'box-sizing': false,
-			'important': false,
-			'known-properties': false
-		}))
-		.pipe(csslint.reporter());
-});
 
-// Revs using cache-buster using query string file hash
-gulp.task('rev', function() {
-  gulp.src('./index.html')
-    .pipe(rev())
-    .pipe(gulp.dest('./dist/'));
-});
-
-// Clean tasks
-gulp.task('cleanall', function() {
-	return gulp.src('./dist/*', {
-			force: true
-		})
-		.pipe(clean());
-});
-
-gulp.task('cleancss', function() {
-	return gulp.src('./dist/*.css', {
-			force: true
-		})
-		.pipe(clean());
-});
-
-gulp.task('cleanjs', function() {
-	return gulp.src('./dist/*', {
-			force: true
-		})
-		.pipe(clean());
-});
-
-// Main task
-gulp.task('default', ['cleanall', 'sass', 'js']);
-
-// Watch task with Browsersync
-gulp.task('serve', ['cleanall', 'sass', 'js', 'browser-sync', 'bs-reload'], function() {
-	gulp.watch([paths.src.sass + '*.scss'], ['cleancss', 'sass', 'bs-reload']);
-	gulp.watch([paths.src.js + '*.js'], ['cleanjs', 'js', 'bs-reload']);
-	gulp.watch(['./index.html'], ['bs-reload']);
+// Production process. Watch, inject, and reload.
+// Type 'gulp serve' in the terminal
+gulp.task('serve', ['clean:before'], function() {
+  gulp.start(
+    'browser-sync',
+    'sass',
+    'scripts',
+    'watch'
+  );
 });
