@@ -47,6 +47,7 @@ Setup `mywebsite.loc` on your local machine
 
 ### Changelog
 
++ 2014-02-19: Replaced ruby-sass with gulp-sass
 + 2014-09-21: Added a todo section in readme. Cleanup
 + 2014-08-30: Separate watch task. Typo, jshint order. Use BASCSS-lite. Updated readme on browser-sync install
 + 2014-08-08: Using multi line banner style again. Dont ignore `/dist` folder. Added Bower and BASCSS
