@@ -6,8 +6,7 @@ Browsersync reloads on all file changes, and uses proxy with vhost.
 
 ## Tools
 
-+ Sass (using `ruby-sass` (`gulp-sass` (libsass) is faster, but this has more features (for newer Sass features) as i write this))
-+ Sass 3.3+ Source maps
++ Sass (using [``gulp-sass``](https://www.npmjs.com/package/gulp-sass))
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
 + Banner using [header](https://www.npmjs.org/package/gulp-header) with metadata from package.json
@@ -41,6 +40,7 @@ Setup `mywebsite.loc` on your local machine
 
 ### Todo
 
++ Refactor using subfolder/files for loading in tasks. Not just a long Gulpfile.
 + Add [gulp-rev](https://github.com/sindresorhus/gulp-rev) for real cache buster using static asset revisioning by appending content hash to filenames
 + Add [Browserify](http://viget.com/extend/gulp-browserify-starter-faq)
 + Add [gulp-notify](https://www.npmjs.org/package/gulp-notify) and [gulp-plumber](https://www.npmjs.org/package/gulp-plumber)
