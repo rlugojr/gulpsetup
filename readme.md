@@ -47,6 +47,7 @@ Setup `mywebsite.loc` on your local machine
 
 ### Changelog
 
++ 2014-04-18: Remove jQuery. Use BASSCSS and Ionicons with Bower.
 + 2014-02-19: Replaced ruby-sass with gulp-sass
 + 2014-09-21: Added a todo section in readme. Cleanup
 + 2014-08-30: Separate watch task. Typo, jshint order. Use BASCSS-lite. Updated readme on browser-sync install
