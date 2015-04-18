@@ -18,7 +18,7 @@
 
     };
 
-    $(function() {
+    document.addEventListener("DOMContentLoaded", function(event) { 
 
         Gulpsetup.init();
 

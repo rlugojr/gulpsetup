@@ -1,26 +1,26 @@
 /**
  * Gulpsetup
- * Copyright (c) 2014 Urban Sanden
+ * Copyright (c) 2015 Urban Sanden
  * Using Browser Sync http://www.browsersync.io/, Autoprefixer, Sass, Uglify etc
  * With some inspiration from https://github.com/neoskop/patternlab-php and http://code.tutsplus.com/tutorials/gulp-as-a-development-web-server--cms-20903
  */
 
-var gulp    	= require('gulp');
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var concat      = require('gulp-concat');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 var browserSync = require('browser-sync');
-var header      = require('gulp-header');
-var imagemin    = require('gulp-imagemin');
-var cssmin      = require('gulp-cssmin');
-var reload      = browserSync.reload;
-var csslint     = require('gulp-csslint');
-var jshint      = require('gulp-jshint');
-var uglify      = require('gulp-uglify');
-var plumber     = require('gulp-plumber');
-var size 		= require('gulp-size');
-var shell 		= require('gulp-shell');
-var package     = require('./package.json');
+var header = require('gulp-header');
+var imagemin = require('gulp-imagemin');
+var cssmin = require('gulp-cssmin');
+var reload = browserSync.reload;
+var csslint = require('gulp-csslint');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var plumber = require('gulp-plumber');
+var size = require('gulp-size');
+var shell = require('gulp-shell');
+var package = require('./package.json');
 
 /*-------------------------------------------------------------------
 
@@ -117,10 +117,7 @@ gulp.task('bs-reload', function() {
 
 gulp.task('js', function() {
     gulp.src([
-      basePaths.bowerjs.base + 'jquery/dist/jquery.js',
       basePaths.bowerjs.base + 'fastclick/lib/fastclick.js',
-      basePaths.bowerjs.base + 'svgeezy/svgeezy.js',
-      basePaths.bowerjs.base + 'slick.js/slick/slick.js',
       basePaths.scripts.base + '*.js'
     ])
     .pipe(plumber())
@@ -128,7 +125,7 @@ gulp.task('js', function() {
         console.log(err.message);
     })
     .pipe(concat('gulpsetup.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(header(banner, {
         package: package
     }))
@@ -181,6 +178,3 @@ gulp.task('serve', ['sass', 'js', 'browser-sync'], function() {
 gulp.task('lint', ['csslint', 'jslint'], function() {
     gulp.watch(['scss/**/*.scss'], ['sass']);
 });
-
-// TODO: Deploy task
-// gulp.task('deploy', shell.task('rsync -avz -e 'ssh -p 60630' --progress --exclude node_modules/ --exclude wp-config.php --exclude uploads/ /Applications/MAMP/htdocs/sciencepark/*  deploy_urre@46.21.108.230:../../home/sciencepark/www/sciencepark.se/public_html'));
