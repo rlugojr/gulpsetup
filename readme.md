@@ -15,10 +15,13 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 	git clone git@github.com:urre/gulpsetup.git && cd gulpsetup
 	rm -rf .git
 
-#### Install Gulp Browser Sync and NPM dependencies
+#### Install Gulp Browser Sync and Gulp
 
 	npm install browser-sync gulp --save-dev
-	npm install
+
+#### Install dependencies
+
+	npm install && bower install
 
 #### Run tasks
 
