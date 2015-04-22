@@ -31,6 +31,7 @@ Browsersync reloads on all file changes
 
 ### Changelog
 
++ 2014-04-22: Removed jQuery. Cleanup unused Gulp plugins not in use. 
 + 2014-04-22: Refactor Gulpfile with separate partials in subfolders. require in base file. Use bascss-sass version.
 + 2014-04-18: Remove jQuery. Use BASSCSS and Ionicons with Bower.
 + 2014-02-19: Replaced ruby-sass with gulp-sass
