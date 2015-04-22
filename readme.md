@@ -1,8 +1,6 @@
-# Gulp setup
+# Gulpsetup
 
-This is my [Gulp](http://gulpjs.com) setup i've been using lately.
-
-Browsersync reloads on all file changes
+A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 ## Some tools used
 
