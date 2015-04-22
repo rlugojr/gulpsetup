@@ -1,6 +1,6 @@
 {
   "name": "gulpsetup",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "authors": [
     "Urban Sanden <hej@urre.me>"
   ],
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "fastclick": "~1.0.3",
-    "basscss": "~6.0.2",
-    "ionicons": "~2.0.1"
+    "ionicons": "~2.0.1",
+    "basscss-sass": "~1.0.2"
   }
 }

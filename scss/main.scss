@@ -5,16 +5,17 @@ BASSCSS
 http://www.basscss.com
 http://www.basscss.com/docs/
 -------------------------------------------------------------------*/
-@import "bower_components/basscss/scss/defaults";
-@import "bower_components/basscss/scss/colors";
-@import "bower_components/basscss/scss/utility-layout";
-@import "bower_components/basscss/scss/base-reset";
-@import "bower_components/basscss/scss/base-typography";
-@import "bower_components/basscss/scss/grid";
-@import "bower_components/basscss/scss/table-object";
-@import "bower_components/basscss/scss/utility-white-space";
-@import "bower_components/basscss/scss/utility-typography";
-@import "bower_components/basscss/scss/utility-responsive-states";
+@import "bower_components/basscss-sass/defaults";
+@import "bower_components/basscss-sass/color-base";
+@import "bower_components/basscss-sass/utility-layout";
+@import "bower_components/basscss-sass/base-reset";
+@import "bower_components/basscss-sass/base-typography";
+@import "bower_components/basscss-sass/grid";
+@import "bower_components/basscss-sass/table-object";
+@import "bower_components/basscss-sass/white-space";
+@import "bower_components/basscss-sass/utility-typography";
+@import "bower_components/basscss-sass/responsive-states";
+@import "bower_components/basscss-sass/responsive-white-space";
 
 /*-------------------------------------------------------------------
 Ionicons
@@ -23,17 +24,6 @@ http://ionicons.com/
 @import "bower_components/ionicons/scss/ionicons-variables";
 @import "bower_components/ionicons/scss/ionicons-font";
 @import "bower_components/ionicons/scss/ionicons-icons";
-
-/*-------------------------------------------------------------------
-Animate.css by Dan Eden
-http://daneden.github.io/animate.css/
-We are using this Sass port: https://github.com/jackilyn/animate.scss
--------------------------------------------------------------------*/
-@import "bower_components/animate.scss/source/fadeIn";
-@import "bower_components/animate.scss/source/fadeOut";
-@import "bower_components/animate.scss/source/bounceIn";
-@import "bower_components/animate.scss/source/bounceInDown";
-@import "bower_components/animate.scss/source/bounceOutUp";
 
 /*-------------------------------------------------------------------
 Base
@@ -56,5 +46,36 @@ Common
 
 
 /*-------------------------------------------------------------------
-Modules
+Presentation
 -------------------------------------------------------------------*/
+main h1 {
+	color: white;
+}
+
+
+/*-------------------------------------------------------------------
+Code
+-------------------------------------------------------------------*/
+pre {
+	background: #333;
+	color: white;
+	padding: 0;
+	font-family: Menlo, Monaco, monospace;
+	font-size: 1.2rem;
+	tab-size: 2;
+	word-break: normal;
+	word-break: normal;
+	hyphens: none;
+	position: relative;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: left;
+	padding: 1em 2em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	code {
+		margin: 0;
+		padding: 0
+	}
+}
