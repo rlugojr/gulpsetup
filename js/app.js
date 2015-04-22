@@ -12,7 +12,7 @@
 
         starter: function() {
 
-            console.log('Gulpsetup init');
+            console.log('Gulpsetup ok');
 
         },
 

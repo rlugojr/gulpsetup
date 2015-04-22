@@ -1,1 +1,1 @@
-!function(){"use strict";var t={init:function(){this.starter()},starter:function(){console.log("Gulpsetup init")}};document.addEventListener("DOMContentLoaded",function(){t.init()})}();
+!function(){"use strict";var t={init:function(){this.starter()},starter:function(){console.log("Gulpsetup ok")}};document.addEventListener("DOMContentLoaded",function(){t.init()})}();

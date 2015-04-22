@@ -11,7 +11,7 @@ module.exports = {
       base: './js/vendor/',
     },
     scripts: {
-      base: './js/views/',
+      base: './js/',
       dist: './dist/'
     },
     bowerjs: {
