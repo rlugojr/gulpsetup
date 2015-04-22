@@ -42,13 +42,15 @@ ol {
 			size: 1em;
 		}
 
-		&:before {
-			content: counter(numbercounter);
-			counter-increment: numbercounter;
-			display: block;
-			margin-left: -2em;
-			padding: 0 2em;
-			float: left;
+		@media #{$breakpoint-md} {
+			&:before {
+				content: counter(numbercounter);
+				counter-increment: numbercounter;
+				display: block;
+				margin-left: -2em;
+				padding: 0 2em;
+				float: left;
+			}
 		}
 	}
 }
@@ -66,9 +68,9 @@ pre {
 	position: relative;
 	max-width: 500px;
 	margin: 0 auto;
-	text-align: left;
+	text-align: center;
 	padding: 1em 2em;
-	margin-top: 5em;
+	margin-top: 3em;
 
 	code {
 		margin: 0;
