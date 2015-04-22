@@ -15,6 +15,7 @@ Browsersync reloads on all file changes
 #### Clone repo
 
 	git clone git@github.com:urre/gulpsetup.git && cd gulpsetup
+	rm -rf .git
 
 #### Install Gulp Browser Sync and NPM dependencies
 
