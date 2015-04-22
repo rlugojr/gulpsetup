@@ -2,28 +2,19 @@
 
 This is my [Gulp](http://gulpjs.com) setup i've been using lately.
 
-Browsersync reloads on all file changes, and uses proxy with vhost.
+Browsersync reloads on all file changes
 
-## Tools
+## Some tools used
 
 + Sass (using [``gulp-sass``](https://www.npmjs.com/package/gulp-sass))
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
-+ Banner using [header](https://www.npmjs.org/package/gulp-header) with metadata from package.json
-+ Uglify
-+ Imagemin
-+ Jshint
-+ Csshint
-+ Clean tasks
 
 ## Getting started
 
 #### Clone repo
 
-	git clone git@github.com:urre/gulpsetup.git mywebsite
-	cd mywebsite
-
-Setup `mywebsite.loc` on your local machine
+	git clone git@github.com:urre/gulpsetup.git && cd gulpsetup
 
 #### Install Gulp Browser Sync and NPM dependencies
 
@@ -38,15 +29,9 @@ Setup `mywebsite.loc` on your local machine
 
 	gulp serve
 
-### Todo
-
-- [ ] Refactor using subfolder/files for loading in tasks. Not just a long Gulpfile.
-- [ ] [gulp-rev](https://github.com/sindresorhus/gulp-rev) for real cache buster using static asset revisioning by appending content hash to filenames
-- [ ] [Browserify](http://viget.com/extend/gulp-browserify-starter-faq)
-- [ ] [gulp-notify](https://www.npmjs.org/package/gulp-notify) and [gulp-plumber](https://www.npmjs.org/package/gulp-plumber)
-
 ### Changelog
 
++ 2014-04-22: Refactor Gulpfile with separate partials in subfolders. require in base file. Use bascss-sass version.
 + 2014-04-18: Remove jQuery. Use BASSCSS and Ionicons with Bower.
 + 2014-02-19: Replaced ruby-sass with gulp-sass
 + 2014-09-21: Added a todo section in readme. Cleanup

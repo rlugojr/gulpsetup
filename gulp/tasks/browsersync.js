@@ -5,11 +5,12 @@ var config  = require('../config').basePaths;
 
 gulp.task('browser-sync', function() {
     browserSync.init([config.scss.base+'**/*.scss', config.scripts.base+'**/*.js', config.html.base+'*.html'], {
-        proxy: "gulpsetup.loc",
-        browser: "google chrome",
-        port: 4060,
-        notify: false,
-        xip: true
+    	server: {
+    		baseDir: "./"
+    	},
+    	port: 4060,
+    	notify: false,
+    	xip: true
     });
 });
 
