@@ -11,7 +11,7 @@ var config  = require('../config').basePaths;
 
 
 /*-------------------------------------------------------------------
-Compile, prefix, add banner
+Compile, prefix, minify
 -------------------------------------------------------------------*/
 gulp.task('sass', function() {
     gulp.src(config.scss.base+'main.scss')

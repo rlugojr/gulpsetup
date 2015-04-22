@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var config  = require('../config').basePaths;
 
 /*-------------------------------------------------------------------
-Concatinate, compress, add banner
+Concatinate, uglify
 -------------------------------------------------------------------*/
 gulp.task('js', function() {
     gulp.src([

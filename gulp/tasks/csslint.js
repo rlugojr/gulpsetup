@@ -6,7 +6,7 @@ var config  = require('../config').basePaths;
 CSS lint
 -------------------------------------------------------------------*/
 gulp.task('csslint', function() {
-    gulp.src(config.scss.base+'gulpsetup.css')
+    gulp.src(config.scss.dist+'main.css')
         .pipe(csslint({
             'compatible-vendor-prefixes': false,
             'box-sizing': false,
