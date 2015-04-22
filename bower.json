@@ -12,9 +12,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jquery": "1.11.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "fastclick": "~1.0.3",
     "ionicons": "~2.0.1",
