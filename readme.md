@@ -29,6 +29,10 @@ Browsersync reloads on all file changes
 
 	gulp serve
 
+### Roadmap
+
+- [ ] Add asset revisioning using gulp-rev and gulp-revcollector
+
 ### Changelog
 
 + 2014-04-22: Removed jQuery. Cleanup unused Gulp plugins not in use. 
