@@ -3,7 +3,7 @@
   "title": "My typical setup for GulpJS with Browser Sync, Autoprefixer etc",
   "url": "https://github.com/urre/gulpsetup",
   "author": "Urban Sanden",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "devDependencies": {
     "gulp": "~3.8.7",
