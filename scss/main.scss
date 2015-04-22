@@ -22,7 +22,6 @@ Ionicons
 http://ionicons.com/
 -------------------------------------------------------------------*/
 @import "bower_components/ionicons/scss/ionicons-variables";
-@import "bower_components/ionicons/scss/ionicons-font";
 @import "bower_components/ionicons/scss/ionicons-icons";
 
 /*-------------------------------------------------------------------
@@ -31,6 +30,7 @@ Base
 @import "base/variables";
 @import "base/colors";
 @import "base/type";
+@import "base/fonts";
 @import "base/links";
 @import "base/forms";
 @import "base/tables";
