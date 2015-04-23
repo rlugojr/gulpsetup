@@ -31,13 +31,17 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 	gulp serve
 
+#### Minify images
+
+	gulp imagemin
+
 ### Roadmap
 
 - [ ] Add asset revisioning using gulp-rev and gulp-revcollector
 
 ### Changelog
 
-+ 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets
++ 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets. Fixed imagemin.
 + 2014-04-22: Added License. Removed Fastclick. More info on demo page.
 + 2014-04-22: Removed jQuery. Cleanup unused Gulp plugins not in use. 
 + 2014-04-22: Refactor Gulpfile with separate partials in subfolders. require in base file. Use bascss-sass version.
