@@ -7,6 +7,9 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 + Sass (using [``gulp-sass``](https://www.npmjs.com/package/gulp-sass))
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
++ CSS Lint
++ JSHint
++ Imagemin
 
 ## Getting started
 
