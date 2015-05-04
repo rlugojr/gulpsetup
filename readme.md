@@ -7,9 +7,9 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 + Sass (using [``gulp-sass``](https://www.npmjs.com/package/gulp-sass))
 + [Browsersync](http://browsersync.io)
 + [Autoprefixer](https://github.com/ai/autoprefixer)
-+ CSS Lint
-+ JSHint
-+ Imagemin
++ [CSS lint](http://csslint.net/)
++ JSHint (using [jshint-stylish](https://github.com/sindresorhus/jshint-stylish))
++ [Imagemin](https://github.com/sindresorhus/gulp-imagemin) using [imagemin-pngcrush](https://www.npmjs.com/package/imagemin-pngcrush)
 
 ## Getting started
 
@@ -38,12 +38,21 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 	gulp imagemin
 
+#### CSS lint
+
+	gulp csslint
+
+#### JSHint
+	
+	gulp jshint
+
 ### Roadmap
 
 - [ ] Add asset revisioning using gulp-rev and gulp-revcollector
 
 ### Changelog
 
++ 2014-05-04: Added jshint-stylish
 + 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets. Fixed imagemin.
 + 2014-04-22: Added License. Removed Fastclick. More info on demo page.
 + 2014-04-22: Removed jQuery. Cleanup unused Gulp plugins not in use. 

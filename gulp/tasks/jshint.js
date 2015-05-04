@@ -10,5 +10,5 @@ gulp.task('jshint', function() {
         config.scripts.base+'app.js',
     ])
         .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('jshint-stylish'))
 });
