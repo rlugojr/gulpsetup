@@ -10,6 +10,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 + [CSS lint](http://csslint.net/)
 + JSHint (using [jshint-stylish](https://github.com/sindresorhus/jshint-stylish))
 + [Imagemin](https://github.com/sindresorhus/gulp-imagemin) using [imagemin-pngcrush](https://www.npmjs.com/package/imagemin-pngcrush)
++ Asset revisioning using [rev]() and [rev-collector]()
 
 ## Getting started
 
@@ -46,12 +47,13 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 	
 	gulp jshint
 
-### Roadmap
+### Asset revisioning
 
-- [ ] Add asset revisioning using gulp-rev and gulp-revcollector
+	gulp rev
 
 ### Changelog
 
++ 2014-05-07: Added static asset revisioning: unicorn.css → unicorn-098f6bcd.css using gulp-rev and gulp-rev-collector
 + 2014-05-04: Added jshint-stylish
 + 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets. Fixed imagemin.
 + 2014-04-22: Added License. Removed Fastclick. More info on demo page.

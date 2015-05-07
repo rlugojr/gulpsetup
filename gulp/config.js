@@ -12,7 +12,8 @@ module.exports = {
     },
     scripts: {
       base: './assets/js/',
-      dist: './dist/'
+      dist: './dist/rev/css/',
+      rev: "./dist/rev/js/"
     },
     bowerjs: {
       base: './bower_components/',
@@ -23,7 +24,8 @@ module.exports = {
     scss: {
       src: './assets/scss/**/*.{sass,scss}',
       base: './assets/scss/',
-      dist: './dist/'
+      dist: './dist/rev/css/',
+      rev: "./dist/rev/css/"
     },
     html: {
       base: './',
@@ -33,6 +35,9 @@ module.exports = {
       src: './assets/images/**/*.{png,jpg}',
       base: './assets/images/',
       dist: './assets/images/'
+    },
+    rev: {
+      base: "./dist/rev/"
     }
   }
 };
