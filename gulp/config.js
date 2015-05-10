@@ -12,8 +12,7 @@ module.exports = {
     },
     scripts: {
       base: './assets/js/',
-      dist: './dist/rev/css/',
-      rev: "./dist/rev/js/"
+      dist: './dist/',
     },
     bowerjs: {
       base: './bower_components/',
@@ -24,8 +23,7 @@ module.exports = {
     scss: {
       src: './assets/scss/**/*.{sass,scss}',
       base: './assets/scss/',
-      dist: './dist/rev/css/',
-      rev: "./dist/rev/css/"
+      dist: './dist/',
     },
     html: {
       base: './',
