@@ -1,19 +1,22 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
-var pngcrush = require('imagemin-pngcrush');
+var size = require('gulp-size');
+var pngquant = require('imagemin-pngquant');
+var jpegtran = require('imagemin-jpegtran');
+var gifsicle = require('imagemin-gifsicle');
 var config  = require('../config').basePaths;
 
 /*-------------------------------------------------------------------
 Minify images
 -------------------------------------------------------------------*/
-gulp.task('imagemin', function() {
-    return gulp.src(config.images.src)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{
-                removeViewBox: false
-            }],
-        }))
-        .pipe(pngcrush({ reduce: true })())
-        .pipe(gulp.dest(config.images.dist));
+gulp.task('optimize-images', function () {
+	return gulp.src([config.images.base+"*.jpg", config.images.base+"*.jpeg", config.images.base+"*.gif", config.images.base+"*.png"])
+	.pipe(size())
+	.pipe(imagemin({
+		progressive: false,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngquant(), jpegtran(), gifsicle()]
+	}))
+	.pipe(size())
+	.pipe(gulp.dest(config.site.dist));
 });

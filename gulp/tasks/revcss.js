@@ -9,7 +9,7 @@ Create revisioned css
 gulp.task("revcss", ["sass"], function() {
   return gulp.src(config.scss.dist+"main.css")
     .pipe(rev())
-    .pipe(gulp.dest(config.scss.rev))
+    .pipe(gulp.dest(config.rev.base))
     .pipe(rev.manifest())
-    .pipe(gulp.dest(config.scss.rev))
+    .pipe(gulp.dest(config.rev.base))
 });

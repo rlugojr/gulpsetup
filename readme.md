@@ -9,7 +9,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 + [Autoprefixer](https://github.com/ai/autoprefixer)
 + [CSS lint](http://csslint.net/)
 + JSHint (using [jshint-stylish](https://github.com/sindresorhus/jshint-stylish))
-+ [Imagemin](https://github.com/sindresorhus/gulp-imagemin) using [imagemin-pngcrush](https://www.npmjs.com/package/imagemin-pngcrush)
++ Optimize images using [Imagemin](https://github.com/sindresorhus/gulp-imagemin) with pngquant, jpegtran and gifsiclce.
 
 ## Getting started
 
@@ -34,9 +34,9 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 	gulp serve
 
-#### Minify images
+#### Optimize images
 
-	gulp imagemin
+	gulp optimize-images
 
 #### CSS lint
 
@@ -48,6 +48,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 ### Changelog
 
++ 2015-07-17: Changed task for optimizing images. Added Pngquant, jpegtran and gifsiclce.
 + 2014-05-04: Added jshint-stylish
 + 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets. Fixed imagemin.
 + 2014-04-22: Added License. Removed Fastclick. More info on demo page.
