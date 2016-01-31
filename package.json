@@ -3,7 +3,7 @@
   "title": "Simple starting point for getting started with Gulp.js.",
   "url": "https://github.com/urre/gulpsetup",
   "author": "Urban Sanden",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
