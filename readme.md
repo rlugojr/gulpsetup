@@ -18,10 +18,6 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 	git clone git@github.com:urre/gulpsetup.git && cd gulpsetup
 	rm -rf .git
 
-#### Install Gulp Browser Sync and Gulp
-
-	npm install browser-sync gulp --save-dev
-
 #### Install dependencies
 
 	npm install && bower install
@@ -48,6 +44,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 ### Changelog
 
++ 2015-07-17: Fixed optimize images-task. Removed rev tasks.
 + 2015-07-17: Changed task for optimizing images. Added Pngquant, jpegtran and gifsiclce.
 + 2014-05-04: Added jshint-stylish
 + 2014-04-23: Use /assets folder, added pngcrush. Moved fonts to /assets. Fixed imagemin.

@@ -18,5 +18,5 @@ gulp.task('optimize-images', function () {
 		use: [pngquant(), jpegtran(), gifsicle()]
 	}))
 	.pipe(size())
-	.pipe(gulp.dest(config.site.dist));
+	.pipe(gulp.dest(config.images.dist));
 });

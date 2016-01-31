@@ -33,9 +33,6 @@ module.exports = {
       src: './assets/images/**/*.{png,jpg}',
       base: './assets/images/',
       dist: './assets/images/'
-    },
-    rev: {
-      base: "./dist/rev/"
     }
   }
 };

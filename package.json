@@ -23,13 +23,11 @@
     "gulp-sass": "*",
     "require-dir": "*",
     "jshint-stylish": "*",
-    "gulp-rev-collector": "*",
-    "gulp-rev": "*",
     "imagemin-pngcrush": "*"
   },
   "devDependencies": {
-    "imagemin-gifsicle": "^4.2.0",
-    "imagemin-jpegtran": "^4.3.0",
-    "imagemin-pngquant": "^4.1.2"
+    "imagemin-gifsicle": "*",
+    "imagemin-jpegtran": "*",
+    "imagemin-pngquant": "*"
   }
 }
