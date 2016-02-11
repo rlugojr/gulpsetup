@@ -10,6 +10,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 + [CSS lint](http://csslint.net/)
 + JSHint (using [jshint-stylish](https://github.com/sindresorhus/jshint-stylish))
 + Optimize images using [Imagemin](https://github.com/sindresorhus/gulp-imagemin) with pngquant, jpegtran and gifsiclce.
++ Size report using [https://www.npmjs.com/package/gulp-sizereport]
 
 ## Getting started
 
@@ -36,7 +37,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 ### Check file sizes in the dist folder
   
-  gulp sizereport
+	gulp sizereport
 
 #### CSS lint
 
