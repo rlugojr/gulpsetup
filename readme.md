@@ -49,6 +49,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 ### Changelog
 
++ 2016-02-11: Added gulp-sizereport, cleanup demo page and dependencies
 + 2015-07-17: Fixed optimize images-task. Removed rev tasks.
 + 2015-07-17: Changed task for optimizing images. Added Pngquant, jpegtran and gifsiclce.
 + 2014-05-04: Added jshint-stylish
