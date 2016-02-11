@@ -2,27 +2,13 @@
 
 /*-------------------------------------------------------------------
 BASSCSS
-http://www.basscss.com
 http://www.basscss.com/docs/
 -------------------------------------------------------------------*/
-@import "bower_components/basscss-sass/defaults";
-@import "bower_components/basscss-sass/color-base";
-@import "bower_components/basscss-sass/utility-layout";
 @import "bower_components/basscss-sass/base-reset";
-@import "bower_components/basscss-sass/base-typography";
+@import "bower_components/basscss-sass/defaults";
 @import "bower_components/basscss-sass/grid";
-@import "bower_components/basscss-sass/table-object";
 @import "bower_components/basscss-sass/white-space";
 @import "bower_components/basscss-sass/utility-typography";
-@import "bower_components/basscss-sass/responsive-states";
-@import "bower_components/basscss-sass/responsive-white-space";
-
-/*-------------------------------------------------------------------
-Ionicons
-http://ionicons.com/
--------------------------------------------------------------------*/
-@import "bower_components/ionicons/scss/ionicons-variables";
-@import "bower_components/ionicons/scss/ionicons-icons";
 
 /*-------------------------------------------------------------------
 Base
@@ -30,7 +16,6 @@ Base
 @import "base/variables";
 @import "base/colors";
 @import "base/type";
-@import "base/fonts";
 @import "base/links";
 @import "base/forms";
 @import "base/tables";
@@ -38,11 +23,6 @@ Base
 @import "base/base";
 @import "base/utility";
 @import "base/mixins";
-
-/*-------------------------------------------------------------------
-Common
--------------------------------------------------------------------*/
-@import "common/type";
 
 /*-------------------------------------------------------------------
 The simple Project page

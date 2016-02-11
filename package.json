@@ -26,6 +26,7 @@
     "imagemin-pngcrush": "*"
   },
   "devDependencies": {
+    "gulp-sizereport": "^1.1.3",
     "imagemin-gifsicle": "*",
     "imagemin-jpegtran": "*",
     "imagemin-pngquant": "*"

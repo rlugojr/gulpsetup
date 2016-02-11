@@ -34,6 +34,10 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 	gulp optimize-images
 
+### Check file sizes in the dist folder
+  
+  gulp sizereport
+
 #### CSS lint
 
 	gulp csslint
