@@ -6,7 +6,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 <ul>
 <li>Structured Gulpfile using ES6 and partials</li>
-<li>Compile Sass using gulp-sass</li>
+<li>Compile Sass using gulp-sass, minify using cssmin</li>
 <li>Transpile JavaScript using <a href="http://babel.io">Babel</a>. ES2015 preset included via <code>.babelrc</code></li>
 <li>Concatinate and minify JavaScript</li> 
 <li><a href="http://eslint.org/">ESLint</a></li> 

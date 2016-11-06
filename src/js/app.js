@@ -1,6 +1,6 @@
 ( function() {
 
-'use strict';
+"use strict";
 
 const Gulpsetup = {
 
@@ -13,16 +13,15 @@ const Gulpsetup = {
   starter: function() {
 
     const odds = evens.map(v => v + 1);
-    console.log('Gulpsetup ok');
+
+    console.log("Gulpsetup ok");
 
   },
 
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener("DOMContentLoaded", function() {
   Gulpsetup.init();
-
 });
 
 }());
