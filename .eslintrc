@@ -1,0 +1,14 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "eqeqeq": 0,
+        "curly": 2,
+        "quotes": [1, "single"]
+    }
+}

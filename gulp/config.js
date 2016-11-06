@@ -1,38 +1,18 @@
-/*-------------------------------------------------------------------
-Paths
--------------------------------------------------------------------*/
-
 module.exports = {
-  basePaths : {
-    assets: {
-      dist: './dist/'
-    },
-    vendor: {
-      base: './js/vendor/',
-    },
-    scripts: {
-      base: './assets/js/',
-      dist: './dist/',
-    },
-    bowerjs: {
-      base: './bower_components/',
-    },
-    fonts: {
-      src: './assets/fonts/'
-    },
-    scss: {
-      src: './assets/scss/**/*.{sass,scss}',
-      base: './assets/scss/',
-      dist: './dist/',
-    },
-    html: {
-      base: './',
-      dist: './'
-    },
-    images: {
-      src: './assets/images/**/*.{png,jpg}',
-      base: './assets/images/',
-      dist: './assets/images/'
-    }
+  scripts: {
+    base: './src/js/',
+    src: './src/js/**/**/*.js',
+    dist: './dist/js/',
+  },
+  scss: {
+    base: './src/scss/',
+    src: './src/scss/**/*.scss',
+    dist: './dist/css/',
+  },
+  html: {
+    base: './**/*.html',
+  },
+  dist: {
+    base: './dist/',
   }
 };

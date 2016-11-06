@@ -1,0 +1,1 @@
+"use strict";!function(){var t={init:function(){this.starter()},starter:function(){evens.map(function(t){return t+1});console.log("Gulpsetup ok")}};document.addEventListener("DOMContentLoaded",function(){t.init()})}();

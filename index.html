@@ -9,8 +9,7 @@
   <title>Gulpsetup</title>
   <meta name="description" content="A simple starting point for using gulpjs">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="dist/css/main.css">
 
 </head>
 <body>
@@ -23,12 +22,14 @@
     </div>
 
     <ul class="features">
-      <li>Structured Gulpfile using partials</li>
-      <li>Compile Sass using gulp-sass (<a href="https://github.com/sass/libsass">Libsass</a>)</li> 
-      <li>Concatinate and minify Javascript using Uglify </li> 
-      <li>Synchronised browser testing using <a href="http://www.browsersync.io/">BrowserSync</a> and <a href="http://xip.io/">xip.io</a></li> 
-      <li>Autoprefixer</li> 
-      <li>Some helpers: plumber, size, csslint, jshint, size report, image optimizations etc. See readme.</li>
+      <li>Structured Gulpfile using ES6 and partials</li>
+      <li>Compile Sass using gulp-sass</li>
+      <li>Transpile JavaScript using <a href="http://babel.io">Babel</a>. ES2015 preset included via <code>.babelrc</code></li>
+      <li>Concatinate and minify JavaScript</li> 
+      <li><a href="http://eslint.org/">ESLint</a></li> 
+      <li>Synchronised browser testing using <a href="http://www.browsersync.io/">BrowserSync</a> and Localtunnel</li> 
+      <li>Autoprefixer</li>
+      <li>Some helpers: plumber, size</li>
     </ul>
 
   </div>
@@ -40,7 +41,7 @@
 
 </main>
 
-<script src="dist/main.js"></script>
+<script src="dist/js/main.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -1,19 +1,23 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var config  = require('../config').basePaths;
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+const reload = browserSync.reload;
+import paths from '../config';
 
-gulp.task('browser-sync', function() {
-    browserSync.init([config.scss.base+'**/*.scss', config.scripts.base+'**/*.js', config.html.base+'*.html'], {
-    	server: {
-    		baseDir: "./"
-    	},
-    	port: 4060,
-    	notify: false,
-    	xip: true
+gulp.task('browser-sync', () => {
+  browserSync.init([
+    paths.scss.src,
+    paths.scripts.src,
+    paths.html.src
+  ],
+    {
+      server: {
+        baseDir: "./"
+      },
+      notify: true,
+      tunnel: true,
     });
 });
 
-gulp.task('bs-reload', function() {
-    browserSync.reload();
+gulp.task('bs-reload', () => {
+  browserSync.reload();
 });

@@ -1,18 +1,10 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cssmin = require('gulp-cssmin');
-var size = require('gulp-size');
-var plumber = require('gulp-plumber');
-var prefix = require('gulp-autoprefixer');
-var header = require('gulp-header');
-var config  = require('../config').basePaths;
 
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import paths from '../config';
 
-/*-------------------------------------------------------------------
-Watch
--------------------------------------------------------------------*/
-gulp.task('serve', ['sass', 'js', 'browser-sync'], function() {
-    gulp.watch([config.scss.src], ['sass'], ['bs-reload']);
-    gulp.watch([config.scripts.base+'*.js'], ['js'], ['bs-reload']);
-    gulp.watch([config.html.base], ['bs-reload']);
+gulp.task('serve', ['sass', 'js', 'browser-sync'], () => {
+  gulp.watch([paths.scss.src], ['sass'], ['bs-reload']);
+  gulp.watch([paths.scripts.src], ['js'], ['bs-reload']);
+  gulp.watch([paths.html.base], ['bs-reload']);
 });

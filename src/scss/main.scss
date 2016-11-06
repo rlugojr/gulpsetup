@@ -1,0 +1,66 @@
+@import "/node_modules/app-reset/app-reset.css";
+
+// Demo
+body {
+	font-family: -apple-system, "BlinkMacSystemFont", sans-serif;
+	font-size: 125%;
+	padding: 1rem;
+}
+
+h1 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+.features {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 3em 0;
+	margin-left: 0;
+	counter-reset: numbercounter;
+	text-align: left;
+}
+
+.features li {
+	display: list-item;
+	line-height: 1.8;
+	list-style: none;
+	border-bottom: 1px solid #ccc;
+	padding: 1rem 2rem;
+}
+
+.feaures li:before {
+	content: counter(numbercounter);
+	counter-increment: numbercounter;
+	display: block;
+	margin-left: -2em;
+	padding: 0 2em;
+	float: left;
+}
+
+pre {
+	background: #333;
+	color: white;
+	font-family: Menlo, Monaco, monospace;
+	font-size: 1.2rem;
+	padding: 1.5rem 2.5rem;
+	tab-size: 2;
+	word-break: normal;
+	word-break: normal;
+	hyphens: none;
+	position: relative;
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
+code {
+	margin: 0;
+	padding: 0
+}
+
+.main {
+	max-width: 40em;
+	margin: 0 auto;
+	padding: 2rem;
+}
