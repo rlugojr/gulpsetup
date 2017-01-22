@@ -30,9 +30,7 @@
     "gulp-size": "*",
     "gulp-uglify": "*",
     "require-dir": "*",
+    "app-reset": "^1.0.2",
     "rollup-plugin-includepaths": "^0.1.8"
-  },
-  "dependencies": {
-    "app-reset": "^1.0.2"
   }
 }
