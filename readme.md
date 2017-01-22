@@ -35,6 +35,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 
 
 ### Changelog
++ 2017-01-22: Add rollup.js
 + 2016-11-06: Use ES6 gulpfile, added Babel, added ESLint, removed Bower support, remove image minifiers, remove jshint, remove csshint. Overall simplified.
 + 2016-02-11: Added gulp-sizereport, cleanup demo page and dependencies
 + 2015-07-17: Fixed optimize images-task. Removed rev tasks.
