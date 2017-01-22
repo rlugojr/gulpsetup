@@ -8,7 +8,7 @@ A simple structured [Gulp](http://gulpjs.com) setup to get things started.
 <li>Structured Gulpfile using ES6 and partials</li>
 <li>Compile Sass using gulp-sass, minify using cssmin</li>
 <li>Transpile JavaScript using <a href="http://babel.io">Babel</a>. ES2015 preset included via <code>.babelrc</code></li>
-<li>Create Next-Gen ES6 bundle with <a href="http://rollupjs.org/">rollup.js</a></li> 
+<li>Create Bundle using <a href="http://rollupjs.org/">rollup.js</a></li> 
 <li><a href="http://eslint.org/">ESLint</a></li> 
 <li>Synchronised browser testing using <a href="http://www.browsersync.io/">BrowserSync</a> and Localtunnel</li> 
 <li>Autoprefixer</li>
