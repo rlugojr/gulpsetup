@@ -21,6 +21,7 @@
       <div class="buttons">
         <iframe src="https://ghbtns.com/github-btn.html?user=urre&repo=gulpsetup&type=star&count=true&size=small" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
         <a class="buttons-travis" href="https://travis-ci.org/urre/gulpsetup"><img src="https://travis-ci.org/urre/gulpsetup.svg" alt="Travis build"> </a>
+        <a className='twitter-share-button' href='https://twitter.com/intent/tweet'>Tweet</a>
       </div>
       <pre>
        <span class="comment">// Install</span> <span class="system">$</span> npm i 
@@ -45,10 +46,28 @@
 </main>
 
 <footer class="footer center">
-    <p><a href="https://twitter.com/urre">by Urban Sandén</a>. Also checkout <a href="https://webpack-setup-aovualbewg.now.sh/">Webpack setup React</a> and <a href="https://urre.github.io/webpack-setup/">Webpack setup</a></p>
+    <p><a href="https://twitter.com/urre">by Urban Sandén</a>. Also checkout <a href="https://webpack-setup-iymzmskwgl.now.sh/">Webpack setup React</a> and <a href="https://urre.github.io/webpack-setup/">Webpack setup</a></p>
 </footer>
 
 <script src="dist/js/app.js"></script>
+
+<div id="main"></div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
